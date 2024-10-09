@@ -1,2 +1,4 @@
 --target=~/.config
 --ignore=.stowrc
+--ignore=^zshrc$
+--ignore=setup.sh
