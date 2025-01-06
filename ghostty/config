@@ -1,6 +1,5 @@
 theme = catppuccin-mocha
 window-inherit-font-size = true 
-font-family = JetBrains Mono
 font-size = 14
 mouse-hide-while-typing = true
 window-padding-x = 10
