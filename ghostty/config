@@ -10,4 +10,4 @@ keybind = super+shift+l=goto_split:right
 keybind = super+shift+j=goto_split:bottom
 keybind = super+shift+k=goto_split:top
 macos-titlebar-proxy-icon = hidden
-
+font-family = JetBrains Mono NL Bold 
