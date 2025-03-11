@@ -7,8 +7,8 @@ yabai -m config layout bsp
 # new window spawns to the right if vertical split, or bottom if horizontal split
 yabai -m config window_placement second_child
 
-# padding set to 12px
-yabai -m config top_padding 12
+# paddings
+yabai -m config top_padding 17
 yabai -m config bottom_padding 12
 yabai -m config left_padding 12
 yabai -m config right_padding 12
@@ -36,3 +36,5 @@ yabai -m rule --add app="^Karabiner-Elements$" manage=off
 yabai -m signal --add app='^Ghostty$' event=window_created action='yabai -m space --layout bsp'
 yabai -m signal --add app='^Ghostty$' event=window_destroyed action='yabai -m space --layout bsp'
 
+# sketchy bar settings
+yabai -m config_external_bar all:37:0
