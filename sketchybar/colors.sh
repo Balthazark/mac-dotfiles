@@ -9,6 +9,7 @@ BAR_COLOR="0xff1e1e2e"
 
 # Item background color (using the "surface 1" color)
 ITEM_BG_COLOR="0xff313244"
+ITEM_BG_COLOR_2="0xff45475a"
 
 # Catppuccin Mocha Accent Colors
 COLOR_ROSEWATER="0xfff5e0dc"

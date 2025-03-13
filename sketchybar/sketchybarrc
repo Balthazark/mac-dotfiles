@@ -54,8 +54,8 @@ do
     space="$sid"
     icon="${SPACE_ICONS[i]}"
     icon.padding_left=8
-    icon.padding_right=8
-    background.color=$ITEM_BG_COLOR
+    icon.padding_right=9
+    background.color=$ITEM_BG_COLOR_2
     label.color=$WHITE
     background.corner_radius=5
     background.height=25
