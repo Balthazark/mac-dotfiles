@@ -33,8 +33,16 @@ yabai -m mouse_drop_action swap
 yabai -m rule --add app="^System Settings$" manage=off
 yabai -m rule --add app="^Calculator$" manage=off
 yabai -m rule --add app="^Karabiner-Elements$" manage=off
+yabai -m rule --add app="^Finder$" manage=off
 yabai -m signal --add app='^Ghostty$' event=window_created action='yabai -m space --layout bsp'
 yabai -m signal --add app='^Ghostty$' event=window_destroyed action='yabai -m space --layout bsp'
 
 # sketchy bar settings
 yabai -m config_external_bar all:37:0
+
+# disable window shadows
+yabai -m config window_shadow off
+
+# set up yanky borders
+borders active_color="gradient(top_left=0xffcba6f7,bottom_right=0xff89b4fa)" width=5.0 whitelist="ghostty" &
+
