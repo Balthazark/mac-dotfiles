@@ -1,5 +1,5 @@
 theme = catppuccin-mocha
-window-inherit-font-size = true 
+window-inherit-font-size = true
 font-size = 14
 font-thicken = true
 mouse-hide-while-typing = true
@@ -10,4 +10,3 @@ keybind = super+shift+l=goto_split:right
 keybind = super+shift+j=goto_split:bottom
 keybind = super+shift+k=goto_split:top
 macos-titlebar-proxy-icon = hidden
-font-family = JetBrains Mono NL Bold 
