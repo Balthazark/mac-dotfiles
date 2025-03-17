@@ -60,6 +60,10 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'eza --icons=always --color=
 alias ls='eza --icons=always'
 alias vim='nvim'
 alias c='clear'
+
+alias nf='nvim $(fzf -m --preview="bat --color=always {}")'
+alias bf='fzf -m --preview="bat --color=always {}"'
+
 alias dcupd="docker compose up -d"
 alias dsall='docker stop $(docker ps -aq) && docker rm $(docker ps -aq)'
 alias dpsa='docker ps -a'
