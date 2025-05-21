@@ -56,7 +56,7 @@ zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza --icons=always --color=always $realpath'
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'eza --icons=always --color=always $realpath'
 
-# Aliases
+# Aliases & functions
 alias ls='eza --icons=always'
 alias vim='nvim'
 alias c='clear'
@@ -67,6 +67,22 @@ alias bf='fzf -m --preview="bat --color=always {}"'
 alias dcupd="docker compose up -d"
 alias dsall='docker stop $(docker ps -aq) && docker rm $(docker ps -aq)'
 alias dpsa='docker ps -a'
+
+gcof() {
+  git checkout "$(git branch --all | grep -v HEAD | sed 's|remotes/origin/||' | sort -u | fzf)"
+}
+
+gmergef() {
+  local merge_branch=$(git branch --all | grep -v HEAD | sed 's|remotes/origin/||' | sort -u | fzf)
+  git merge "$merge_branch"
+}
+
+alias gmergeprev='git merge @{-1}'
+
+gmergedqa() {
+  local current_branch=$(git branch --show-current)
+  git checkout develop && git merge "$current_branch"
+}
 
 # Functions
 function nvm() {
