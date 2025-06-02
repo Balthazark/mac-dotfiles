@@ -1,3 +1,5 @@
+# PHP path variable# PHP path variabless
+export PATH="/opt/homebrew/opt/php@7.3/bin:$PATH"
 # Path to startship config
 export STARSHIP_CONFIG=~/.config/starship/starship.toml
 # Set the directory we want to store zinit and plugins
@@ -68,15 +70,6 @@ alias dcupd="docker compose up -d"
 alias dsall='docker stop $(docker ps -aq) && docker rm $(docker ps -aq)'
 alias dpsa='docker ps -a'
 
-gcof() {
-  git checkout "$(git branch --all | grep -v HEAD | sed 's|remotes/origin/||' | sort -u | fzf)"
-}
-
-gmergef() {
-  local merge_branch=$(git branch --all | grep -v HEAD | sed 's|remotes/origin/||' | sort -u | fzf)
-  git merge "$merge_branch"
-}
-
 alias gmergeprev='git merge @{-1}'
 
 gmergedqa() {
@@ -85,19 +78,25 @@ gmergedqa() {
 }
 
 # Functions
+# Lazy load nvm
 function nvm() {
-  # Remove this function so the real nvm command can be used
   unset -f nvm
-  # Source nvm (adjust the path if your nvm is installed elsewhere)
-  if [ -s "$HOME/.nvm/nvm.sh" ]; then
-    . "$HOME/.nvm/nvm.sh"
+
+  # Define NVM_DIR explicitly
+  export NVM_DIR="$HOME/.nvm"
+
+  # Source nvm
+  if [ -s "$NVM_DIR/nvm.sh" ]; then
+    . "$NVM_DIR/nvm.sh"
   fi
-  # Optionally load nvm bash completion if desired
-  if [ -s "$HOME/.nvm/bash_completion" ]; then
-    . "$HOME/.nvm/bash_completion"
+
+  # Optional: bash completion
+  if [ -s "$NVM_DIR/bash_completion" ]; then
+    . "$NVM_DIR/bash_completion"
   fi
-  # Re-run nvm with the passed arguments
-  nvm "$@"
+
+  # Re-run nvm with original args
+  command nvm "$@"
 }
 
 # Shell integrations
